@@ -96,6 +96,8 @@ const teamList = [
     },
 ]
 
+
+// Versione con interpolazione stringhe 
 let newTeamObject = "";
 
 for (let i = 0; i < teamList.length; i++) {
@@ -112,14 +114,23 @@ for (let i = 0; i < teamList.length; i++) {
 
     console.log(teamList[i]);
 
-    const newElement = document.createElement('div');
     for (let key in teamList[i]) {
-        newTeamObject = ` ${key}: ${teamList[i][key]}`;
-        newElement.append(newTeamObject);
-        newElement.classList.add("mb-2");
+        newTeamObject += `<br> ${key}: ${teamList[i][key]}`;
     }
-    displayElementBottom.appendChild(newElement);
 }
+
+
+
+// Versione manipolazione dom 
+
+// const newElement = document.createElement('div');
+// for (let key in teamList[i]) {
+//     newTeamObject = ` ${key}: ${teamList[i][key]}`;
+//     newElement.append(newTeamObject);
+//     newElement.classList.add("mb-2");
+// }
+// displayElementBottom.appendChild(newElement);
+// }
 
 
 
@@ -144,6 +155,6 @@ for (let i = 0; i < teamList.length; i++) {
 console.table(newArray);
 
 
-// displayElementBottom.innerHTML = `Gli oggetti con numeri random sono${newTeamObject}`;
+displayElementBottom.innerHTML = `Gli oggetti con numeri random sono${newTeamObject}`;
 
 displayElementThird.innerHTML = `i nuovi oggetti con solo il nome e i falli subiti è ${newArrayString}`;
