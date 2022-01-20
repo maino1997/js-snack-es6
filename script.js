@@ -119,5 +119,5 @@ for (let i = 0; i < teamList.length; i++) {
     newArray.push(newObject);
 }
 
-console.log(newArray);
+console.table(newArray);
 
