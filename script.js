@@ -16,6 +16,8 @@
 
 // SNACK 1 
 
+const displayElement = document.getElementById("display-first");
+
 const bikeList = [
     {
         nome: "bianchi",
@@ -40,26 +42,26 @@ let message = "";
 
 for (let i = 0; i < bikeList.length - 1; i++) {
     const { peso } = bikeList[i];
-    // const { nome } = bikeList[i];
-
-
 
     if (peso[i] < peso[i + 1]) {
         result = i;
     } else {
         result = i + 1;
     }
-
-
 }
 
 message += `La bici con il peso minore è la ${bikeList[result].nome}`
 console.log(result);
 console.log(message);
 
+displayElement.innerText = message;
+
 
 
 // SNACK 2 
+
+const displayElementBottom = document.getElementById("display-second");
+
 
 const getRandomNumber = (min, max) => {
     const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -90,6 +92,8 @@ const teamList = [
     },
 ]
 
+let newTeamObject = "";
+
 for (let i = 0; i < teamList.length; i++) {
     let { puntiFatti } = teamList[i];
     let { falliSubiti } = teamList[i];
@@ -102,9 +106,15 @@ for (let i = 0; i < teamList.length; i++) {
     teamList[i].puntiFatti = puntiFatti;
     teamList[i].falliSubiti = falliSubiti;
     console.log(teamList[i]);
+
+    for (let key in teamList[i]) {
+        newTeamObject += `<br> ${key}: ${teamList[i][key]}`;
+    }
 }
 
-// let nome = "";
+
+
+let newArrayString = "";
 // let falliSubiti = "";
 const newArray = [];
 
@@ -117,7 +127,26 @@ for (let i = 0; i < teamList.length; i++) {
     }
 
     newArray.push(newObject);
+
+    for (let key in newObject) {
+        newArrayString += `<br>${key}: ${newObject[key]}`;
+    }
 }
 
 console.table(newArray);
+
+
+displayElementBottom.innerHTML = `Gli oggetti con numeri random sono${newTeamObject} <br>
+e i nuovi oggetti con solo il nome e i falli subiti e ${newArrayString}`;
+
+// const ciao = {
+//     nome: "io",
+//     cognome: 3
+// }
+
+// const { nome } = ciao;
+// const { cognome } = ciao;
+
+// displayElementBottom.innerHTML = `${ nome } <br> ${cognome}`;
+
 
