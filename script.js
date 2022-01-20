@@ -38,12 +38,12 @@ let result = 0;
 let message = "";
 
 for (let i = 0; i < bikeList.length - 1; i++) {
-    // const { peso } = bikeList[i];
+    const { peso } = bikeList[i];
     // const { nome } = bikeList[i];
 
 
 
-    if (bikeList[i].peso < bikeList[i + 1].peso) {
+    if (peso[i] < peso[i + 1]) {
         result = i;
     } else {
         result = i + 1;
@@ -55,3 +55,8 @@ for (let i = 0; i < bikeList.length - 1; i++) {
 message += `La bici con il peso minore è la ${bikeList[result].nome}`
 console.log(result);
 console.log(message);
+
+
+
+// SNACK 2 
+
