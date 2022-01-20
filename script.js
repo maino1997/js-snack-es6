@@ -61,6 +61,7 @@ displayElement.innerText = message;
 // SNACK 2 
 
 const displayElementBottom = document.getElementById("display-second");
+const displayElementThird = document.getElementById("display-third");
 
 
 const getRandomNumber = (min, max) => {
@@ -98,13 +99,14 @@ for (let i = 0; i < teamList.length; i++) {
     let { puntiFatti } = teamList[i];
     let { falliSubiti } = teamList[i];
 
-    // console.log(puntiFatti);
-    // console.log(falliSubiti);
 
     puntiFatti = getRandomNumber(1, 30);
     falliSubiti = getRandomNumber(1, 50);
     teamList[i].puntiFatti = puntiFatti;
     teamList[i].falliSubiti = falliSubiti;
+    console.log(puntiFatti);
+    console.log(falliSubiti);
+
     console.log(teamList[i]);
 
     for (let key in teamList[i]) {
@@ -135,5 +137,6 @@ for (let i = 0; i < teamList.length; i++) {
 console.table(newArray);
 
 
-displayElementBottom.innerHTML = `Gli oggetti con numeri random sono${newTeamObject} <br>
-e i nuovi oggetti con solo il nome e i falli subiti e ${newArrayString}`;
+displayElementBottom.innerHTML = `Gli oggetti con numeri random sono${newTeamObject}`;
+
+displayElementThird.innerHTML = `i nuovi oggetti con solo il nome e i falli subiti è ${newArrayString}`;
