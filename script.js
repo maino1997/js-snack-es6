@@ -114,7 +114,7 @@ for (let i = 0; i < teamList.length; i++) {
 
     const newElement = document.createElement('div');
     for (let key in teamList[i]) {
-        newTeamObject = `${key}: ${teamList[i][key]}`;
+        newTeamObject = ` ${key}: ${teamList[i][key]}`;
         newElement.append(newTeamObject);
         newElement.classList.add("mb-2");
     }
