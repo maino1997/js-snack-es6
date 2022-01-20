@@ -112,9 +112,13 @@ for (let i = 0; i < teamList.length; i++) {
 
     console.log(teamList[i]);
 
+    const newElement = document.createElement('div');
     for (let key in teamList[i]) {
-        newTeamObject += `<br> ${key}: ${teamList[i][key]}`;
+        newTeamObject = `${key}: ${teamList[i][key]}`;
+        newElement.append(newTeamObject);
+        newElement.classList.add("mb-2");
     }
+    displayElementBottom.appendChild(newElement);
 }
 
 
@@ -140,6 +144,6 @@ for (let i = 0; i < teamList.length; i++) {
 console.table(newArray);
 
 
-displayElementBottom.innerHTML = `Gli oggetti con numeri random sono${newTeamObject}`;
+// displayElementBottom.innerHTML = `Gli oggetti con numeri random sono${newTeamObject}`;
 
 displayElementThird.innerHTML = `i nuovi oggetti con solo il nome e i falli subiti è ${newArrayString}`;
