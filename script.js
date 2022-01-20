@@ -115,7 +115,6 @@ for (let i = 0; i < teamList.length; i++) {
 
 
 let newArrayString = "";
-// let falliSubiti = "";
 const newArray = [];
 
 for (let i = 0; i < teamList.length; i++) {
@@ -138,15 +137,3 @@ console.table(newArray);
 
 displayElementBottom.innerHTML = `Gli oggetti con numeri random sono${newTeamObject} <br>
 e i nuovi oggetti con solo il nome e i falli subiti e ${newArrayString}`;
-
-// const ciao = {
-//     nome: "io",
-//     cognome: 3
-// }
-
-// const { nome } = ciao;
-// const { cognome } = ciao;
-
-// displayElementBottom.innerHTML = `${ nome } <br> ${cognome}`;
-
-
