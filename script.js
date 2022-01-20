@@ -58,6 +58,9 @@ displayElement.innerText = message;
 
 
 
+
+
+
 // SNACK 2 
 
 const displayElementBottom = document.getElementById("display-second");
