@@ -225,7 +225,7 @@ const students = [
 ];
 
 
-const targhe = students.map((student, index) => {
+const targhe = students.map((student) => {
     let string = "";
     const name = student.nome;
     const firstLetter = name[0].toUpperCase();
@@ -240,3 +240,23 @@ const targhe = students.map((student, index) => {
 
 console.log(targhe);
 
+
+const up70 = students.filter((student) => {
+    if (student.somma > 70) {
+        return true;
+    }
+    return false;
+});
+
+console.log(up70);
+
+
+
+const up120 = students.filter((student) => {
+    if (student.somma > 70 && student.id > 120) {
+        return true;
+    }
+    return false;
+});
+
+console.log(up120);
