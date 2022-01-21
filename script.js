@@ -189,31 +189,6 @@ console.log(isResult(numList, 1, 8));
 
 
 
-
-
-
-
-// const slicedArray = (list, a, b) => {
-//     const sliced = list.slice(a, b);
-//     return sliced;
-// }
-
-// console.log(slicedArray(5, 8));
-
-// const indice = numList.filter((item, index, original) => {
-//     const slicedArr = slicedArray(original, 5, 8);
-//     if (slicedArr.includes(index)) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-
-// });
-
-// console.log(indice);
-
-
-
 // SNACK 4
 // Abbiamo un elenco degli studenti di una facoltà, identificati da id, nome e somma totale dei loro voti di esame...
 // 1. dobbiamo creare una lista contenente delle targhe (stringhe) con il loro nome in maiuscolo
@@ -240,7 +215,7 @@ const students = [
     },
     {
         id: 893,
-        nome: "francesco",
+        nome: "giovanni    giacomo",
         somma: 84
     },
     {
@@ -252,14 +227,18 @@ const students = [
 
 
 const targhe = students.map((student) => {
-    let string = "";
     const name = student.nome;
-    const firstLetter = name[0].toUpperCase();
-    console.log(firstLetter);
-    const others = name.substring(1).toLowerCase();
-    console.log(others);
+    let string = name[0].toUpperCase();
+    let char = "";
+    for (let i = 1; i < name.length; i++) {
+        if (name[i - 1] === " ") {
+            char = name[i].toUpperCase();
+        } else {
+            char = name[i].toLowerCase();
+        }
+        string += char;
+    }
 
-    string = `${firstLetter}${others}`;
     console.log(string);
     return string;
 });
