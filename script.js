@@ -165,26 +165,52 @@ displayElementThird.innerHTML = `i nuovi oggetti con solo il nome e i falli subi
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 // Usiamo i nuovi metodi degli array visti oggi in classe.
 
+
+// SE HO UNA FUNZIONE DENTRO AD UN'ALTRA FUNZIONE POSSO PASSARE I PARAMETRI ANCHE ALLA FUNZIONE SUPERIORE PER USARE I PARAMETRI
+// STESSI NELLA FUZIONE INFERIORE.
+// SOPRATTUTTO SE LA FUNZIONE INFERIORE è COME IN QUESTO CASO UN FILTER O ALTRE FUNZIONI CHE PRENDONO IN COME PARAMETRI SOLO
+// CERTI VALORI.
 const numList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const slicedArray = (a, b) => {
-    const sliced = numList.slice(a, b);
-    return sliced;
-}
+const isResult = (list, a, b) => {
+    const filtered = list.filter((item, index) => {
+        if (index >= a && index <= b) {
+            return true;
+        }
+    });
+    return filtered;
+};
 
-console.log(slicedArray(2, 4));
+console.log(isResult(numList, 1, 8));
 
-const indice = numList.filter((index) => {
-    const slicedArr = slicedArray(5, 8);
-    if (slicedArr.includes(index)) {
-        return true;
-    } else {
-        return false;
-    }
 
-});
 
-console.log(indice);
+
+
+
+
+
+
+
+
+// const slicedArray = (list, a, b) => {
+//     const sliced = list.slice(a, b);
+//     return sliced;
+// }
+
+// console.log(slicedArray(5, 8));
+
+// const indice = numList.filter((item, index, original) => {
+//     const slicedArr = slicedArray(original, 5, 8);
+//     if (slicedArr.includes(index)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+
+// });
+
+// console.log(indice);
 
 
 
