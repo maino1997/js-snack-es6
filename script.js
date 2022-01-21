@@ -186,11 +186,3 @@ const indice = numList.filter((index) => {
 
 console.log(indice);
 
-
-// const getRange = (a, b, numList, range) => {
-//     range = numList.slice(a, b);
-
-//     return betNumbers;
-// };
-
-// console.log(getRange(2, 5, numList));
