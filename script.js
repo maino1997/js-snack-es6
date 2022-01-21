@@ -25,7 +25,7 @@ const bikeList = [
     },
     {
         nome: "rossi",
-        peso: 11
+        peso: 111
     },
     {
         nome: "verdi",
@@ -33,7 +33,7 @@ const bikeList = [
     },
     {
         nome: "gustav",
-        peso: 1111
+        peso: 1
     }
 ];
 
@@ -41,8 +41,7 @@ let result = 0;
 let message = "";
 
 for (let i = 0; i < bikeList.length; i++) {
-    const bike = bikeList[i];
-    const { peso } = bike;
+    const { peso } = bikeList[i];
 
     if (peso > bikeList[result].peso) {
         result = i;
