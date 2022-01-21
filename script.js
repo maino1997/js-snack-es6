@@ -186,3 +186,57 @@ const indice = numList.filter((index) => {
 
 console.log(indice);
 
+
+
+// SNACK 4
+// Abbiamo un elenco degli studenti di una facoltà, identificati da id, nome e somma totale dei loro voti di esame...
+// 1. dobbiamo creare una lista contenente delle targhe (stringhe) con il loro nome in maiuscolo
+// ES (marco de iulio => Marco de iulio);
+// 2. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
+// 3. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
+
+
+const students = [
+    {
+        id: 114,
+        nome: "marco",
+        somma: 75
+    },
+    {
+        id: 561,
+        nome: "giovanni",
+        somma: 95
+    },
+    {
+        id: 45,
+        nome: "michela",
+        somma: 47
+    },
+    {
+        id: 893,
+        nome: "francesco",
+        somma: 84
+    },
+    {
+        id: 110,
+        nome: "gerardo",
+        somma: 68
+    },
+];
+
+
+const targhe = students.map((student, index) => {
+    let string = "";
+    const name = student.nome;
+    const firstLetter = name[0].toUpperCase();
+    console.log(firstLetter);
+    const others = name.substring(1).toLowerCase();
+    console.log(others);
+
+    string = `${firstLetter}${others}`;
+    console.log(string);
+    return string;
+});
+
+console.log(targhe);
+
