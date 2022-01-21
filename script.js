@@ -99,9 +99,7 @@ const teamList = [
 let newTeamObject = "";
 
 for (let i = 0; i < teamList.length; i++) {
-    let { puntiFatti } = teamList[i];
-    let { falliSubiti } = teamList[i];
-
+    let { puntiFatti, falliSubiti } = teamList[i];
 
     puntiFatti = getRandomNumber(1, 30);
     falliSubiti = getRandomNumber(1, 50);
