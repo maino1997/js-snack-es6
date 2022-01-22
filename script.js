@@ -258,10 +258,6 @@ const targhe = students.map((student, index) => {
         splitted[i] = splitted[i].charAt(0).toUpperCase() + splitted[i].substring(1);
     }
     console.log(splitted);
-
-
-
-
     return splitted;
 });
 
