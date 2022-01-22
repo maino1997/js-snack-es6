@@ -226,24 +226,48 @@ const students = [
 ];
 
 
-const targhe = students.map((student) => {
-    const name = student.nome;
-    let string = name[0].toUpperCase();
-    let char = "";
-    for (let i = 1; i < name.length; i++) {
-        if (name[i - 1] === " ") {
-            char = name[i].toUpperCase();
-        } else {
-            char = name[i].toLowerCase();
-        }
-        string += char;
-    }
+// // Versione con ciclo senza metodi 
+// const targhe = students.map((student) => {
+//     const name = student.nome;
+//     let string = name[0].toUpperCase();
+//     let char = "";
+//     for (let i = 1; i < name.length; i++) {
+//         if (name[i - 1] === " ") {
+//             char = name[i].toUpperCase();
+//         } else {
+//             char = name[i].toLowerCase();
+//         }
+//         string += char;
+//     }
 
-    console.log(string);
-    return string;
+//     console.log(string);
+//     return string;
+// });
+
+
+// Versione con metodi 
+// ATTENZIONE CHE IN QUESTO CASO LIMITE LA NOTAZIONE CON LE [] E IL METODO CHARAT() SULLA STRINGA NON DANNO LO STESSO RISULTATO SE
+//  IL CARATTERE è UNO SPAZIO VUOTO, LE [] DANNO UNDEFINED E INVECE IL CHARAT() RITORNA UNA STRINGA VUOTA.
+const targhe = students.map((student, index) => {
+    string = "";
+    const name = student.nome;
+    const splitted = name.split(" ");
+    for (let i = 0; i < splitted.length; i++) {
+        console.log(splitted[i].charAt(0));
+        console.log(splitted[i][0]);
+        splitted[i] = splitted[i].charAt(0).toUpperCase() + splitted[i].substring(1);
+    }
+    console.log(splitted);
+
+
+
+
+    return splitted;
 });
 
 console.log(targhe);
+
+
 
 
 const up70 = students.filter((student) => {
