@@ -38,7 +38,7 @@ const bikeList = [
 ];
 
 let result = 0;
-let message = "";
+let message = "SNACK 1 <br>";
 
 for (let i = 0; i < bikeList.length; i++) {
     const { peso } = bikeList[i];
@@ -52,7 +52,7 @@ message += `La bici con il peso minore è la ${bikeList[result].nome}`
 console.log(result);
 console.log(message);
 
-displayElement.innerText = message;
+displayElement.innerHTML = message;
 
 
 
@@ -151,7 +151,7 @@ for (let i = 0; i < teamList.length; i++) {
 console.table(newArray);
 
 
-displayElementBottom.innerHTML = `Gli oggetti con numeri random sono${newTeamObject}`;
+displayElementBottom.innerHTML = `SNACK 2 <br> Gli oggetti con numeri random sono${newTeamObject}`;
 
 displayElementThird.innerHTML = `i nuovi oggetti con solo il nome e i falli subiti è ${newArrayString}`;
 
@@ -248,6 +248,9 @@ const students = [
 // Versione con metodi 
 // ATTENZIONE CHE IN QUESTO CASO LIMITE LA NOTAZIONE CON LE [] E IL METODO CHARAT() SULLA STRINGA NON DANNO LO STESSO RISULTATO SE
 //  IL CARATTERE è UNO SPAZIO VUOTO, LE [] DANNO UNDEFINED E INVECE IL CHARAT() RITORNA UNA STRINGA VUOTA.
+const snack3Display = document.getElementById("display-4");
+
+let snack3Msg = "SNACK 3 <br>";
 const targhe = students.map((student, index) => {
     string = "";
     const name = student.nome;
@@ -256,14 +259,19 @@ const targhe = students.map((student, index) => {
         splitted[i] = splitted[i].charAt(0).toUpperCase() + splitted[i].substring(1);
     }
     console.log(splitted);
-    return splitted;
+    const joined = splitted.join(" ");
+    return joined;
 });
 
-console.log(targhe);
+snack3Display.innerHTML = `${snack3Msg}${targhe}`;
 
 
 
 
+
+const snack4Display = document.getElementById("display-5");
+
+let snack4Msg = "SNACK 4 <br>"
 const up70 = students.filter((student) => {
     if (student.somma > 70) {
         return true;
@@ -274,6 +282,19 @@ const up70 = students.filter((student) => {
 console.log(up70);
 
 
+let newStudent = "";
+for (let i = 0; i < up70.length; i++) {
+    newStudent += `Lo studente N${i + 1} è <br>`;
+    for (let key in up70[i]) {
+        newStudent += `${key}: ${up70[i][key]}<br>`;
+    }
+}
+
+snack4Display.innerHTML = `${snack4Msg}${newStudent}`;
+
+
+
+const snack5Display = document.getElementById("display-6");
 
 const up120 = students.filter((student) => {
     if (student.somma > 70 && student.id > 120) {
@@ -283,3 +304,14 @@ const up120 = students.filter((student) => {
 });
 
 console.log(up120);
+
+let newStudent120 = "";
+
+for (let i = 0; i < up120.length; i++) {
+    newStudent120 += `Lo studente N${i + 1} è <br>`;
+    for (let key in up120[i]) {
+        newStudent120 += `${key}: ${up120[i][key]}<br>`;
+    }
+}
+
+snack5Display.innerHTML = `${newStudent120}`;
