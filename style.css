@@ -1,0 +1,19 @@
+section{
+    background-color:rgb(228, 220, 220); 
+    padding: 50px 0;
+}
+
+.content{
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px 2px rgb(185, 180, 180);
+}
+
+.content:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 20px 2px black;
+}
+
