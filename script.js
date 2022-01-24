@@ -256,10 +256,11 @@ const targhe = students.map((student, index) => {
     const name = student.nome;
     const splitted = name.split(" ");
     for (let i = 0; i < splitted.length; i++) {
-        splitted[i] = splitted[i].charAt(0).toUpperCase() + splitted[i].substring(1);
+        splitted[i] = splitted[i].charAt(0).toUpperCase() + splitted[i].substring(1).toLowerCase();
     }
     console.log(splitted);
     const joined = splitted.join(" ");
+    console.log(joined);
     return joined;
 });
 
